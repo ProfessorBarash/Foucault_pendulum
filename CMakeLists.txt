@@ -13,7 +13,7 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(Foucault_pendulum src/main.cpp)
+add_executable(Foucault_pendulum src/main.cpp src/model.cpp)
 target_compile_features(Foucault_pendulum PRIVATE cxx_std_17)
 target_link_libraries(Foucault_pendulum PRIVATE SFML::Graphics)
 
