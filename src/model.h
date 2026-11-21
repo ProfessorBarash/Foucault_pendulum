@@ -1,8 +1,25 @@
-#ifndef MATH_UTILS_H
-#define MATH_UTILS_H
+#ifndef MODEL_H
+#define MODEL_H
+#include "vector.h"
 
-double acceleration(double delta_x, double k=0.01);
+Vector3 const GRAVITY_ACCELERATION{0, 0, 9.81};
 
-void solver(double& delta_x, double delta_t, double& velocity);
+class foucaultPendulum{
+private:
+    
+    double string_lenght;
+public:
+    angle position, velocity;
+    foucaultPendulum(double string_lenght): position({0, 0.35}), velocity({0, 0}), string_lenght(string_lenght){}
+    foucaultPendulum(double string_lenght, double phi_x, double phi_y): position({phi_x, phi_y}), velocity({0, 0}), string_lenght(string_lenght){}
+    
+    angle acceleration(angle _position);
+    
+    void solver(double delta_t);
+
+    angle getPosition(){
+        return position;
+    }
+};
 
 #endif
