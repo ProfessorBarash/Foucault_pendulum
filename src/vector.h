@@ -20,7 +20,7 @@ Vector3 operator+(const Vector3& a, const Vector3& b);
 Vector3 operator-(const Vector3& a, const Vector3& b);
 
 struct angle{
-    double phi_x, phi_y;
+    long double phi_x, phi_y;
 
     angle& operator+=(const angle &a);
 };
