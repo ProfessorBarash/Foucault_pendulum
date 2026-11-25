@@ -2,7 +2,7 @@
 #define VECTOR_H
 
 struct Vector3{
-    double x, y, z;
+    long double x, y, z;
 
     double getLenght() const;
 
